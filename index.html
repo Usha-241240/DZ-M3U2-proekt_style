@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Марина Лопатина — специалист по внедрению нейросетей. Автоматизация контента, продаж и процессов с помощью ИИ.">
+  <title>Марина Лопатина — Специалист по внедрению нейросетей</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-glow" aria-hidden="true">
+    <div class="bg-glow__blob bg-glow__blob--1"></div>
+    <div class="bg-glow__blob bg-glow__blob--2"></div>
+    <div class="bg-glow__blob bg-glow__blob--3"></div>
+  </div>
+
+  <input type="checkbox" id="menu-check" hidden>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">Марина <span>Лопатина</span></a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#about" class="nav__link">Обо мне</a>
+        <a href="#services" class="nav__link">Услуги</a>
+        <a href="#audience" class="nav__link">Для кого</a>
+        <a href="#process" class="nav__link">Процесс</a>
+        <a href="#portfolio" class="nav__link">Работы</a>
+        <a href="#contact" class="nav__link">Контакты</a>
+      </nav>
+
+      <a href="https://t.me/UshaNella" class="header__cta" target="_blank" rel="noopener noreferrer">Написать</a>
+
+      <label for="menu-check" class="menu-toggle" aria-label="Открыть меню">
+        <svg class="menu-toggle__icon menu-toggle__open" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg class="menu-toggle__icon menu-toggle__close" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </label>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="Мобильная навигация">
+    <a href="#about" class="mobile-nav__link">Обо мне</a>
+    <a href="#services" class="mobile-nav__link">Услуги</a>
+    <a href="#audience" class="mobile-nav__link">Для кого</a>
+    <a href="#process" class="mobile-nav__link">Процесс</a>
+    <a href="#portfolio" class="mobile-nav__link">Работы</a>
+    <a href="#contact" class="mobile-nav__link">Контакты</a>
+    <a href="https://t.me/UshaNella" class="mobile-nav__cta" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="hero" class="hero section">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__badge">
+            <span class="hero__badge-dot"></span>
+            Нейросети для бизнеса
+          </p>
+          <h1 class="hero__name">Марина Лопатина</h1>
+          <p class="hero__role">Специалист по внедрению нейросетей</p>
+          <p class="hero__tagline">Автоматизирую контент, продажи и процессы с помощью искусственного интеллекта</p>
+          <div class="hero__actions">
+            <a href="https://t.me/UshaNella" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              @UshaNella
+            </a>
+            <a href="mailto:usha40@mail.ru" class="btn btn--outline">
+              <svg class="btn__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              usha40@mail.ru
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__photo-wrap">
+          <div class="hero__photo-frame">
+            <div class="hero__photo-glow" aria-hidden="true"></div>
+            <img src="assets/marina.jpg" alt="Марина Лопатина" class="hero__photo" width="384" height="384">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Обо мне</h2>
+        </header>
+        <div class="about-box">
+          <p>Помогаю блогерам и онлайн-бизнесу упростить создание контента и автоматизировать рутинные задачи с помощью современных нейросетей.</p>
+          <p>Прошла обучение в «Школе нейросетей и SMM» Ксении Барановой на курсе «Нейросети для контента, бизнеса и творчества».</p>
+          <p>Работаю с современными ИИ-инструментами и адаптирую их под реальные бизнес-задачи — от генерации текстов до создания визуального контента.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <header class="section-title">
+          <span class="section-title__eyebrow">Услуги</span>
+          <h2 class="section-title__heading">Чем я могу быть полезна</h2>
+          <p class="section-title__desc">Закрываю широкий спектр задач с помощью нейросетей</p>
+        </header>
+        <div class="grid grid--3">
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">✍️</span>
+            <h3 class="card__title">Тексты</h3>
+            <p class="card__text">Посты, сценарии, прогревы, продающие тексты</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">🎨</span>
+            <h3 class="card__title">Визуал</h3>
+            <p class="card__text">Изображения, нейрофото, аватары, карточки товаров</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">🎬</span>
+            <h3 class="card__title">Видео</h3>
+            <p class="card__text">Reels, shorts, идеи контента, сценарии</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">📊</span>
+            <h3 class="card__title">Стратегия</h3>
+            <p class="card__text">Контент-планы, продающие воронки, лендинги</p>
+          </article>
+          <article class="card">
+            <span class="card__icon" aria-hidden="true">⚡</span>
+            <h3 class="card__title">Автоматизация</h3>
+            <p class="card__text">GPT-агенты под задачи, автоматизация процессов</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audience -->
+    <section id="audience" class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Для кого</h2>
+          <p class="section-title__desc">Работаю с представителями онлайн-бизнеса и творческого контента</p>
+        </header>
+        <div class="grid grid--4">
+          <article class="card card--center">
+            <div class="card__num">1</div>
+            <h3 class="card__title">Блогеры</h3>
+            <p class="card__text">Создание регулярного контента для соцсетей</p>
+          </article>
+          <article class="card card--center">
+            <div class="card__num">2</div>
+            <h3 class="card__title">Эксперты</h3>
+            <p class="card__text">Авторский контент и позиционирование</p>
+          </article>
+          <article class="card card--center">
+            <div class="card__num">3</div>
+            <h3 class="card__title">Онлайн-проекты</h3>
+            <p class="card__text">Комплексное сопровождение</p>
+          </article>
+          <article class="card card--center">
+            <div class="card__num">4</div>
+            <h3 class="card__title">Малый и средний бизнес</h3>
+            <p class="card__text">Автоматизация маркетинга</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problems -->
+    <section class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Проблемы, которые решаю</h2>
+        </header>
+        <div class="grid grid--3">
+          <article class="card">
+            <h3 class="card__title">Нет времени на контент</h3>
+            <p class="card__text">Еженедельное создание постов и роликов отнимает ресурсы</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Нет идей для видео</h3>
+            <p class="card__text">Сложно генерировать свежие концепции</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Сложно писать тексты</h3>
+            <p class="card__text">Копирайтинг требует времени и навыков</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Нет системы в маркетинге</h3>
+            <p class="card__text">Процессы неструктурированы</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Много ручной работы</h3>
+            <p class="card__text">Повторяющиеся задачи</p>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Низкие продажи</h3>
+            <p class="card__text">Неправильная презентация товара</p>
+          </article>
+        </div>
+        <p class="problems-cta">Решаю это с помощью ИИ</p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Как я работаю</h2>
+          <p class="section-title__desc">Чёткий 5-этапный процесс решения вашей задачи</p>
+        </header>
+        <ol class="process-list">
+          <li class="process-item">
+            <article class="process-item__card">
+              <span class="process-item__step">01</span>
+              <h3 class="process-item__title">Анализ задачи</h3>
+              <p class="process-item__text">Изучаю вашу задачу, целевую аудиторию и желаемый результат</p>
+            </article>
+          </li>
+          <li class="process-item">
+            <article class="process-item__card">
+              <span class="process-item__step">02</span>
+              <h3 class="process-item__title">Подбор инструментов</h3>
+              <p class="process-item__text">Выбираю оптимальные нейросети и настраиваю под вашу задачу</p>
+            </article>
+          </li>
+          <li class="process-item">
+            <article class="process-item__card">
+              <span class="process-item__step">03</span>
+              <h3 class="process-item__title">Создание решения</h3>
+              <p class="process-item__text">Генерирую контент, тексты или автоматизацию</p>
+            </article>
+          </li>
+          <li class="process-item">
+            <article class="process-item__card">
+              <span class="process-item__step">04</span>
+              <h3 class="process-item__title">Доработка</h3>
+              <p class="process-item__text">Вношу правки и уточнения до идеального результата</p>
+            </article>
+          </li>
+          <li class="process-item">
+            <article class="process-item__card">
+              <span class="process-item__step">05</span>
+              <h3 class="process-item__title">Передача результата</h3>
+              <p class="process-item__text">Передаю готовое решение с пояснениями и рекомендациями</p>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Примеры работ</h2>
+          <p class="section-title__desc">Портфолио включает учебные и практические проекты</p>
+        </header>
+        <div class="grid grid--2">
+          <article class="card">
+            <span class="card__tag">Брендинг</span>
+            <h3 class="card__title">Фирменный стиль для магазина комнатных растений</h3>
+            <p class="card__text">Разработка логотипа, паттернов, мокапов и иллюстраций</p>
+          </article>
+          <article class="card">
+            <span class="card__tag">Визуал</span>
+            <h3 class="card__title">Нейрофотосессия</h3>
+            <p class="card__text">Генерация образов с помощью ИИ — альтернатива классической фотосъёмке. Быстро, гибко, без затрат на студию.</p>
+          </article>
+          <article class="card">
+            <span class="card__tag">Маркетплейс</span>
+            <h3 class="card__title">Карточка товара</h3>
+            <p class="card__text">Разработка структуры и текста карточки, оформление под требования маркетплейсов, визуальный контент без съёмки.</p>
+          </article>
+          <article class="card">
+            <span class="card__tag">Автоматизация</span>
+            <h3 class="card__title">GPT-агент для автоматизации задач</h3>
+            <p class="card__text">Разработала ИИ-ассистента, который генерирует контент для соцсетей</p>
+          </article>
+        </div>
+
+        <article class="post-card">
+          <span class="card__tag">Копирайтинг</span>
+          <h3 class="post-card__title">Продающий пост для салона подологического педикюра</h3>
+          <p class="post-card__preview">Весна уже рядом. Скоро — цветы, встречи, лёгкие платья и первые открытые туфли. И в этот день особенно хочется чувствовать себя ухоженной до кончиков пальцев...</p>
+          <details class="post-card__details">
+            <summary>Читать полностью</summary>
+            <div class="post-card__full">Весна уже рядом.
+Скоро — цветы, встречи, лёгкие платья и первые открытые туфли.
+И в этот день особенно хочется чувствовать себя ухоженной до кончиков пальцев.
+
+Но давайте честно: зима оставляет следы — сухая кожа, усталые стопы, ломкость ногтей. И если просто «накрасить сверху», ощущение идеала не приходит.
+
+В салоне «Подологический маникюр, педикюр Анжелы» красота начинается с здоровья. Это не потоковая работа на скорость — аккуратная, профессиональная обработка, внимание к каждой детали.
+
+Что вы получаете перед праздником:
+— аккуратный маникюр с чистой формой и стойким покрытием
+— гладкие ухоженные стопы без сухости
+— идеальную обработку кутикулы без порезов
+— стерильность: 3 этапа обработки инструментов
+— процедуру 60–90 минут без спешки и суеты
+
+8 Марта — это не только про цветы. Это про ощущение «я красивая, ухоженная и довольная собой».</div>
+          </details>
+        </article>
+
+        <p class="portfolio-note">Все проекты выполнены с применением современных ИИ-инструментов и адаптированы под конкретные задачи.</p>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Результат</h2>
+          <p class="section-title__desc">Вы получаете комплексное решение</p>
+        </header>
+        <div class="grid grid--4">
+          <article class="card card--gradient">
+            <h3 class="card__title">Готовый контент</h3>
+            <p class="card__text">Посты, тексты, изображения и видео, готовые к публикации</p>
+          </article>
+          <article class="card card--gradient">
+            <h3 class="card__title">Экономия времени</h3>
+            <p class="card__text">Освобождаетесь от рутинных задач для фокуса на стратегии</p>
+          </article>
+          <article class="card card--gradient">
+            <h3 class="card__title">Ускорение процессов</h3>
+            <p class="card__text">Сокращение времени на создание контента в разы</p>
+          </article>
+          <article class="card card--gradient">
+            <h3 class="card__title">Масштабирование</h3>
+            <p class="card__text">Идеи и системы, которые можно развивать</p>
+          </article>
+        </div>
+        <p class="results-highlight">ИИ = инструмент роста, а не просто тренд</p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Форматы и условия</h2>
+        </header>
+        <div class="pricing-grid">
+          <div class="pricing-card pricing-card--default">
+            <h3 class="pricing-card__title">Форматы сотрудничества</h3>
+            <ul class="check-list">
+              <li>
+                <svg class="check-list__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Разовые задачи
+              </li>
+              <li>
+                <svg class="check-list__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Пакеты услуг
+              </li>
+              <li>
+                <svg class="check-list__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Сопровождение
+              </li>
+            </ul>
+          </div>
+          <div class="pricing-card pricing-card--accent">
+            <h3 class="pricing-card__title">На старте</h3>
+            <ul class="check-list">
+              <li>
+                <svg class="check-list__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Доступная стоимость
+              </li>
+              <li>
+                <svg class="check-list__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Гибкие условия
+              </li>
+              <li>
+                <svg class="check-list__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Возможен тестовый проект
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <header class="section-title">
+          <h2 class="section-title__heading">Напишите мне</h2>
+          <p class="section-title__desc">Разберём вашу задачу и найдём оптимальное решение с помощью искусственного интеллекта</p>
+        </header>
+        <div class="contact-box">
+          <p class="contact-box__name">Марина Лопатина</p>
+          <p class="contact-box__role">Специалист по внедрению нейросетей</p>
+          <div class="contact-box__actions">
+            <a href="https://t.me/UshaNella" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+              </svg>
+              Telegram: @UshaNella
+            </a>
+            <a href="mailto:usha40@mail.ru" class="btn btn--outline">
+              <svg class="btn__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              usha40@mail.ru
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Марина Лопатина. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
