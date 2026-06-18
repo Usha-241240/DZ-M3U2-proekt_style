@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="border-glow.css">
 </head>
 <body>
 
@@ -296,26 +297,49 @@
           </div>
           <p class="section-title__desc">Учебные и практические проекты с применением ИИ</p>
         </header>
-        <div class="grid grid--2">
-          <article class="card">
-            <span class="card__tag">Брендинг</span>
-            <h3 class="card__title">Фирменный стиль для магазина комнатных растений</h3>
-            <p class="card__text">Разработка логотипа, паттернов, мокапов и иллюстраций</p>
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="portfolio-card__media">
+              <img src="assets/work-branding.jpg" alt="Фирменный стиль магазина комнатных растений «Дом в листве»" class="portfolio-card__img" width="800" height="600" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="card__tag">Брендинг</span>
+              <h3 class="card__title">Фирменный стиль для магазина комнатных растений</h3>
+              <p class="card__text">Разработка логотипа, паттернов, мокапов и иллюстраций</p>
+            </div>
           </article>
-          <article class="card">
-            <span class="card__tag">Визуал</span>
-            <h3 class="card__title">Нейрофотосессия</h3>
-            <p class="card__text">Генерация образов с помощью ИИ — альтернатива классической фотосъёмке. Быстро, гибко, без затрат на студию.</p>
+
+          <article class="portfolio-card">
+            <div class="portfolio-card__media">
+              <img src="assets/work-neurophoto.jpg" alt="Нейрофотосессия — до и после" class="portfolio-card__img" width="800" height="600" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="card__tag">Визуал</span>
+              <h3 class="card__title">Нейрофотосессия</h3>
+              <p class="card__text">Генерация образов с помощью ИИ — альтернатива классической фотосъёмке. Быстро, гибко, без затрат на студию.</p>
+            </div>
           </article>
-          <article class="card">
-            <span class="card__tag">Маркетплейс</span>
-            <h3 class="card__title">Карточка товара</h3>
-            <p class="card__text">Разработка структуры и текста карточки, оформление под требования маркетплейсов, визуальный контент без съёмки.</p>
+
+          <article class="portfolio-card">
+            <div class="portfolio-card__media">
+              <img src="assets/work-product.jpg" alt="Карточка товара — визуал для маркетплейса" class="portfolio-card__img" width="800" height="600" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="card__tag">Маркетплейс</span>
+              <h3 class="card__title">Карточка товара</h3>
+              <p class="card__text">Разработка структуры и текста карточки, оформление под требования маркетплейсов, визуальный контент без съёмки.</p>
+            </div>
           </article>
-          <article class="card">
-            <span class="card__tag">Автоматизация</span>
-            <h3 class="card__title">GPT-агент для автоматизации задач</h3>
-            <p class="card__text">Разработала ИИ-ассистента, который генерирует контент для соцсетей</p>
+
+          <article class="portfolio-card portfolio-card--screen">
+            <div class="portfolio-card__media">
+              <img src="assets/work-gpt.jpg" alt="GPT-агент «Копирайтер для соцсетей» — интерфейс ChatGPT" class="portfolio-card__img portfolio-card__img--screen" width="540" height="960" loading="lazy">
+            </div>
+            <div class="portfolio-card__body">
+              <span class="card__tag">Автоматизация</span>
+              <h3 class="card__title">GPT-агент для автоматизации задач</h3>
+              <p class="card__text">Разработала ИИ-ассистента, который генерирует контент для соцсетей</p>
+            </div>
           </article>
         </div>
 
@@ -464,5 +488,6 @@
     </div>
   </footer>
 
+  <script src="border-glow.js" defer></script>
 </body>
 </html>

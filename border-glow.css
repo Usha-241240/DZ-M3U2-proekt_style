@@ -1,0 +1,295 @@
+/* Border glow — свечение границ за курсором (адаптация React Bits BorderGlow) */
+
+.border-glow-card {
+  --edge-proximity: 0;
+  --cursor-angle: 45deg;
+  --edge-sensitivity: 16;
+  --color-sensitivity: calc(var(--edge-sensitivity) + 6);
+  --border-radius: 12px;
+  --glow-padding: 40px;
+  --cone-spread: 25;
+  --border-glow-border: rgb(255 255 255 / 15%);
+
+  position: relative;
+  border-radius: var(--border-radius);
+  isolation: isolate;
+  transform: translate3d(0, 0, 0.01px);
+  display: grid;
+  border: 1px solid var(--border-glow-border);
+  background: var(--card-bg, #ffffff);
+  overflow: visible;
+  box-shadow:
+    rgba(51, 65, 85, 0.05) 0 4px 12px,
+    rgba(51, 65, 85, 0.04) 0 8px 24px;
+}
+
+.border-glow-card--light {
+  --border-glow-border: rgba(51, 65, 85, 0.12);
+}
+
+.border-glow-card--hero {
+  --border-glow-border: rgba(37, 99, 235, 0.2);
+}
+
+.border-glow-card--dark {
+  --border-glow-border: rgb(255 255 255 / 12%);
+  box-shadow:
+    rgba(0, 0, 0, 0.12) 0 8px 24px,
+    rgba(0, 0, 0, 0.08) 0 16px 48px;
+}
+
+.border-glow-card::before,
+.border-glow-card::after,
+.border-glow-card > .edge-light {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: opacity 0.25s ease-out;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.border-glow-card:not(:hover):not(.sweep-active)::before,
+.border-glow-card:not(:hover):not(.sweep-active)::after,
+.border-glow-card:not(:hover):not(.sweep-active) > .edge-light {
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+.border-glow-card::before {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--card-bg, #ffffff) 0 100%) padding-box,
+    linear-gradient(rgb(255 255 255 / 0%) 0% 100%) border-box,
+    var(--gradient-one) border-box,
+    var(--gradient-two) border-box,
+    var(--gradient-three) border-box,
+    var(--gradient-four) border-box,
+    var(--gradient-five) border-box,
+    var(--gradient-six) border-box,
+    var(--gradient-seven) border-box,
+    var(--gradient-base) border-box;
+
+  opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+
+  mask-image:
+    conic-gradient(
+      from var(--cursor-angle) at center,
+      black calc(var(--cone-spread) * 1%),
+      transparent calc((var(--cone-spread) + 15) * 1%),
+      transparent calc((100 - var(--cone-spread) - 15) * 1%),
+      black calc((100 - var(--cone-spread)) * 1%)
+    );
+}
+
+.border-glow-card::after {
+  border: 1px solid transparent;
+  background:
+    var(--gradient-one) padding-box,
+    var(--gradient-two) padding-box,
+    var(--gradient-three) padding-box,
+    var(--gradient-four) padding-box,
+    var(--gradient-five) padding-box,
+    var(--gradient-six) padding-box,
+    var(--gradient-seven) padding-box,
+    var(--gradient-base) padding-box;
+
+  mask-image:
+    linear-gradient(to bottom, black, black),
+    radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
+    radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%),
+    conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+
+  mask-composite: subtract, add, add, add, add, add;
+  opacity: calc(var(--fill-opacity, 0.6) * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+  mix-blend-mode: overlay;
+}
+
+.border-glow-card--dark::after {
+  mix-blend-mode: soft-light;
+}
+
+.border-glow-card > .edge-light {
+  inset: calc(var(--glow-padding) * -1);
+  z-index: 1;
+  mask-image:
+    conic-gradient(
+      from var(--cursor-angle) at center,
+      black 2.5%,
+      transparent 10%,
+      transparent 90%,
+      black 97.5%
+    );
+
+  opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+  mix-blend-mode: plus-lighter;
+}
+
+.border-glow-card--hero::before {
+  opacity: calc(1.1 * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+}
+
+.border-glow-card--hero > .edge-light {
+  opacity: calc(1.15 * (var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+}
+
+@supports not (mix-blend-mode: plus-lighter) {
+  .border-glow-card > .edge-light {
+    mix-blend-mode: screen;
+  }
+}
+
+.border-glow-card > .edge-light::before {
+  content: "";
+  position: absolute;
+  inset: var(--glow-padding);
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1px var(--glow-color, hsl(213deg 93% 68% / 100%)),
+    inset 0 0 1px 0 var(--glow-color-60),
+    inset 0 0 3px 0 var(--glow-color-50),
+    inset 0 0 6px 0 var(--glow-color-40),
+    inset 0 0 15px 0 var(--glow-color-30),
+    inset 0 0 25px 2px var(--glow-color-20),
+    inset 0 0 50px 2px var(--glow-color-10),
+    0 0 1px 0 var(--glow-color-60),
+    0 0 3px 0 var(--glow-color-50),
+    0 0 6px 0 var(--glow-color-40),
+    0 0 15px 0 var(--glow-color-30),
+    0 0 25px 2px var(--glow-color-20),
+    0 0 50px 2px var(--glow-color-10);
+}
+
+.border-glow-inner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* Интеграция с карточками сайта */
+
+.portfolio-card.border-glow-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.portfolio-card.border-glow-card:hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.portfolio-card.border-glow-card .border-glow-inner {
+  flex: 1;
+  background: var(--bg-card);
+}
+
+.post-card.border-glow-card {
+  margin-top: 2rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.post-card.border-glow-card .border-glow-inner {
+  padding: 2rem;
+  border-left: 4px solid var(--accent);
+  background: var(--bg-card);
+}
+
+.pricing-card.border-glow-card {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.pricing-card.border-glow-card .border-glow-inner {
+  padding: 2rem;
+  background: var(--bg-card);
+}
+
+.pricing-card--accent.border-glow-card .border-glow-inner {
+  background: linear-gradient(135deg, var(--gray-dark), #1e293b);
+  color: #e2e8f0;
+}
+
+.contact-box.border-glow-card {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-box.border-glow-card .border-glow-inner {
+  padding: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  background: linear-gradient(135deg, var(--gray-dark), #1e293b);
+  color: #e2e8f0;
+}
+
+/* Карточки секций */
+.card.border-glow-card {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.card.border-glow-card:hover {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.card.border-glow-card .border-glow-inner {
+  padding: 1.75rem;
+  background: var(--bg-card);
+}
+
+.card--center.border-glow-card .border-glow-inner {
+  text-align: center;
+}
+
+.card--featured.border-glow-card .border-glow-inner {
+  background: linear-gradient(135deg, var(--gray-dark), #1e293b);
+  color: #e2e8f0;
+}
+
+.card--gradient.border-glow-card .border-glow-inner {
+  text-align: center;
+  background: linear-gradient(160deg, var(--white), var(--blue-light));
+}
+
+/* Фото в hero */
+.hero__photo-frame.border-glow-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.hero__photo-frame.border-glow-card .border-glow-inner {
+  overflow: hidden;
+  background: transparent;
+}
+
+.hero__photo-frame.border-glow-card .hero__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-glow-card::before,
+  .border-glow-card::after,
+  .border-glow-card > .edge-light {
+    display: none;
+  }
+}

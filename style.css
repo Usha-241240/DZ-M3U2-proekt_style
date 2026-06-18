@@ -753,8 +753,113 @@ ul, ol {
 }
 
 /* Portfolio post */
+/* Portfolio works grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s, border-color 0.35s;
+}
+
+.portfolio-card:hover {
+  position: relative;
+  z-index: 2;
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 40px rgba(96, 165, 250, 0.12);
+}
+
+.portfolio-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--blue-light);
+  transition: aspect-ratio 0.45s var(--ease-out);
+}
+
+.portfolio-card__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: object-fit 0.45s var(--ease-out), height 0.45s var(--ease-out);
+}
+
+.portfolio-card:hover .portfolio-card__media {
+  aspect-ratio: auto;
+}
+
+.portfolio-card:hover .portfolio-card__img {
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-card__media,
+  .portfolio-card__img {
+    transition: none;
+  }
+}
+
+.portfolio-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.portfolio-card__body .card__title {
+  margin-top: 0.75rem;
+}
+
+.portfolio-card__body .card__text {
+  flex: 1;
+}
+
+/* Скриншот GPT-агента (портретный мобильный формат) */
+.portfolio-card--screen .portfolio-card__media {
+  background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.portfolio-card--screen .portfolio-card__img,
+.portfolio-card--screen .portfolio-card__img--screen {
+  object-fit: contain;
+  object-position: top center;
+  padding: 0.75rem 1rem 0.5rem;
+}
+
+.portfolio-card--screen:hover .portfolio-card__media {
+  aspect-ratio: auto;
+}
+
+.portfolio-card--screen:hover .portfolio-card__img {
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+  padding: 1rem 1.25rem 0.75rem;
+}
+
+/* Portfolio featured post */
 .post-card {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   padding: 2rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
